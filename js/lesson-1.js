@@ -72,11 +72,35 @@ function logNumbers(min, max) {
 // Передбачається, що відвідувач вводить лише числа. Передбачати обробку
 // нечислових рядків у цій задачі необов'язково.
 
-let number = prompt("Введіть число більше 100")
-while (number !== null && Number(number)<=100){
-   number = prompt("Введіть число більше 100")
-if (number===null){
-   console.log("введення скасоване")
-   break;
+// let number = prompt("Введіть число більше 100")
+// while (number !== null && Number(number)<=100){
+//    number = prompt("Введіть число більше 100")
+// if (number===null){
+//    console.log("введення скасоване")
+//    break;
+// }
+// }
+
+//Якщо число ділитися на 3 повертати fizz
+//якщо ділитися на 5 повертати buzz
+//Якщо ділитися на 3 і на 5 повернути fizzbuzz
+
+function checkMultiples(number) {
+  if (number % 5 === 0 && number % 3 === 0) {
+    return "fizzbuzz";
+    
+  }
+   else if  (number % 5 === 0) {
+    return "buzz";
+  }
+  else if  (number % 3 === 0) {
+    return "fizz"
+  }
+   
+  else {
+    return "Це число не кратне 3 або 5";
+  }
 }
-}
+
+console.log(checkMultiples(6))
+
