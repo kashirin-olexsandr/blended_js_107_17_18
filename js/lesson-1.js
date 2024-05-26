@@ -113,16 +113,45 @@ console.log(checkMultiples(6));
 //     alert( 'We hope that this page looks ok!' );
 // }
 
-const browser = "Chrome";
-if (browser === "Edge") {
-  alert("You've got the Edge!");
-} else if (
-  browser === "Chrome" ||
-  browser === "Firefox" ||
-  browser === "Safari" ||
-  browser === "Opera"
-) {
-  alert("Okay we support these browsers too");
-} else {
-  alert("We hope that this page looks ok!");
+// const browser = "Chrome";
+// if (browser === "Edge") {
+//   alert("You've got the Edge!");
+// } else if (
+//   browser === "Chrome" ||
+//   browser === "Firefox" ||
+//   browser === "Safari" ||
+//   browser === "Opera"
+// ) {
+//   alert("Okay we support these browsers too");
+// } else {
+//   alert("We hope that this page looks ok!");
+// }
+
+
+
+//~ Змінна num може набувати 4 значення: 1, 2, 3 або 4. Якщо вона має
+//~ значення '1', то у змінну result запишемо 'зима', якщо має значення
+//~ '2' - 'весна' і так далі. Розв'яжіть завдання через switch-case.
+// const valueSeason = prompt("Введіть число від 1 до 4");
+
+
+const valueSeason = prompt("Введіть число від 1 до 4")
+let result = ""
+switch (Number(valueSeason)) {
+   case 1: 
+   result = "зима"
+      break;
+   case 2: 
+   result = "весна"
+      break;
+   case 3: 
+   result = "літо"
+      break;
+   case 4: 
+   result = "осінь"
+      break;
+   default:
+      result = "це не пора року!"
+      break;
 }
+console.log(`Пора року: ${result}`);
