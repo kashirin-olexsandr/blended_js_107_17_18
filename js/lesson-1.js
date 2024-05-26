@@ -63,7 +63,6 @@ function logNumbers(min, max) {
 
 // console.log(logNumbers(5, 10));
 
-
 // Повторювати цикл, поки введення неправильне
 // Напишіть цикл, який пропонує prompt ввести число більше 100.
 // Якщо відвідувач ввів інше число - попросити ввести ще раз, і таке інше.
@@ -88,19 +87,42 @@ function logNumbers(min, max) {
 function checkMultiples(number) {
   if (number % 5 === 0 && number % 3 === 0) {
     return "fizzbuzz";
-    
-  }
-   else if  (number % 5 === 0) {
+  } else if (number % 5 === 0) {
     return "buzz";
-  }
-  else if  (number % 3 === 0) {
-    return "fizz"
-  }
-   
-  else {
+  } else if (number % 3 === 0) {
+    return "fizz";
+  } else {
     return "Це число не кратне 3 або 5";
   }
 }
 
-console.log(checkMultiples(6))
+console.log(checkMultiples(6));
 
+// Напишіть if..else, що відповідає наступному switch:
+// switch (browser) {
+//   case 'Edge':
+//     alert( "You've got the Edge!" );
+//     break;
+//   case 'Chrome':
+//   case 'Firefox':
+//   case 'Safari':
+//   case 'Opera':
+//     alert( 'Okay we support these browsers too' );
+//     break;
+//   default:
+//     alert( 'We hope that this page looks ok!' );
+// }
+
+const browser = "Chrome";
+if (browser === "Edge") {
+  alert("You've got the Edge!");
+} else if (
+  browser === "Chrome" ||
+  browser === "Firefox" ||
+  browser === "Safari" ||
+  browser === "Opera"
+) {
+  alert("Okay we support these browsers too");
+} else {
+  alert("We hope that this page looks ok!");
+}
