@@ -30,14 +30,35 @@ console.log(getQuater(30));
 //то вивести рядок "Добрий день!"
 //інакше виводити рядок "Невірний пароль!"
 
-const userRule = prompt("Введіть логін");
-console.log("userRule: ", userRule);
+// const userRule = prompt("Введіть логін");
+// console.log("userRule: ", userRule);
 
-if (userRule === "Admin") {
-  const passRule = prompt("Введіть пароль");
-  if (passRule === "iAmTheBoss") {
-    console.log("Добрий день!");
-  } else console.log("Невірний пароль!");
-} else if (userRule === "" || userRule === null) {
-  console.log("Скасовано");
-} else console.log("Я вас не знаю");
+// if (userRule === "Admin") {
+//   const passRule = prompt("Введіть пароль");
+//   if (passRule === "iAmTheBoss") {
+//     console.log("Добрий день!");
+//   } else console.log("Невірний пароль!");
+// } else if (userRule === "" || userRule === null) {
+//   console.log("Скасовано");
+// } else console.log("Я вас не знаю");
+
+//~ Створи функцію logNumbers яка приймає min і max
+//~ і виводить у консоль
+//~ числа від max до min за спаданням
+//~ Додайте усі парні числа від max до min
+const max = 50;
+const min = 23;
+
+function logNumbers(min, max) {
+  let sum;
+  for (let i = max; i >= min; i--) {
+    console.log(i);
+    if (i % 2 === 0) {
+      sum += i;
+    }
+  }
+
+  return sum;
+}
+
+console.log(logNumbers(5, 10));
