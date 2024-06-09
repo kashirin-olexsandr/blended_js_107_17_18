@@ -78,21 +78,51 @@ console.log(user);
 console.log(user2);
 console.log(user3);
 
-
-
 // Task-3
 //Напишіть функцію getUniqueValues(arr), яка повертає масив,
 //містить лише унікальні елементи arr.
-const words = ["HTML","CSS", "JS", "React", "JS", "CSS", "JS",
-"Node.js", "JS", "React", "CSS", "React", "HTML", "Node.js"];
-
+const words = [
+  "HTML",
+  "CSS",
+  "JS",
+  "React",
+  "JS",
+  "CSS",
+  "JS",
+  "Node.js",
+  "JS",
+  "React",
+  "CSS",
+  "React",
+  "HTML",
+  "Node.js",
+];
 
 function getUniqueValues(words) {
-    const uniqueArray = [];
-    for (const word of words) {
-        if (!uniqueArray.includes(word)) {
-            uniqueArray.push(word)
-        }
+  const uniqueArray = [];
+  for (const word of words) {
+    if (!uniqueArray.includes(word)) {
+      uniqueArray.push(word);
     }
-    return uniqueArray
+  }
+  return uniqueArray;
+} //нашої команди //Напишіть код для сумування всіх зарплат і //збережіть його результат у змінній sum. //Якщо об'єкт salaries порожній, то результат має бути 0
+
+//У нас є об'єкт, у якому зберігатимуться зарплати
+const salaries = {
+  Mango: 100,
+  Poly: 160,
+  Ajax: 1470,
+};
+
+function getSumSalaries(salaries) {
+  const values = Object.values(salaries);
+
+  let sum = 0;
+  for (const value of values) {
+    sum += value;
+  }
+  return sum;
 }
+
+console.log(getSumSalaries(salaries));
