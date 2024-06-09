@@ -77,3 +77,22 @@ console.log(user3.getInfo());
 console.log(user);
 console.log(user2);
 console.log(user3);
+
+
+
+// Task-3
+//Напишіть функцію getUniqueValues(arr), яка повертає масив,
+//містить лише унікальні елементи arr.
+const words = ["HTML","CSS", "JS", "React", "JS", "CSS", "JS",
+"Node.js", "JS", "React", "CSS", "React", "HTML", "Node.js"];
+
+
+function getUniqueValues(words) {
+    const uniqueArray = [];
+    for (const word of words) {
+        if (!uniqueArray.includes(word)) {
+            uniqueArray.push(word)
+        }
+    }
+    return uniqueArray
+}
