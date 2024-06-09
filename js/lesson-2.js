@@ -30,4 +30,50 @@ function findSmallerNumber(numbers) {
   return smallestNumber;
 }
 
-console.log(findSmallerNumber(numbers));
+// console.log(findSmallerNumber(numbers));
+
+// Додати метод getInfo в об'єкт user, який повертатиме інфу про користувача у форматі
+// Name: Peter. Surname: Parker. Age: 22. Position: spider-man.
+// const user = {
+//   name: "Piter",
+//   surname: "Parker",
+//   age: 22,
+//   position: "spider-man",
+//   getInfo() {
+//     return `Name: ${this.name}. Surname: ${this.surname}. Age: ${this.age}. Position: ${this.position}`;
+//   },
+// };
+
+// console.log(user.getInfo());
+
+const user = {
+  name: "Piter",
+  surname: "Parker",
+  age: 22,
+  position: "spider-man",
+};
+const user2 = {
+  name: "Alex",
+  surname: "Park",
+  age: 33,
+  position: "man",
+};
+const user3 = {
+  name: "Kate",
+  surname: "Park",
+  age: 33,
+  position: "woman",
+};
+function getInfo() {
+  return `Name: ${this.name}. Surname: ${this.surname}. Age: ${this.age}. Position: ${this.position}.`;
+}
+user.getInfo = getInfo;
+user2.getInfo = getInfo;
+user3.getInfo = getInfo;
+console.log(user.getInfo());
+console.log(user2.getInfo());
+console.log(user3.getInfo());
+
+console.log(user);
+console.log(user2);
+console.log(user3);
