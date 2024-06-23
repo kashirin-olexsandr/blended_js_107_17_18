@@ -89,9 +89,9 @@ function getEyeColor(users, color) {
   return users.filter((user) => user.eyeColor === color);
 }
 
-console.log(getEyeColor(users, "brown"));
-console.log(getEyeColor(users, "blue"));
-console.log(getEyeColor(users, "green"));
+// console.log(getEyeColor(users, "brown"));
+// console.log(getEyeColor(users, "blue"));
+// console.log(getEyeColor(users, "green"));
 
 function usersWithGender(users, gender) {
   //     return users.filter((user)=>user.gender === gender).map((user)=>user.name)
@@ -102,5 +102,38 @@ function usersWithGender(users, gender) {
     return arrNames;
   }, []);
 }
-console.log(usersWithGender(users,"female"));
-console.log(usersWithGender(users,"male"));
+// console.log(usersWithGender(users,"female"));
+// console.log(usersWithGender(users,"male"));
+
+// / Отримати користувача (не масив) по email (поле email, він унікальний).
+// console.log(getUserWithEmail(users, 'shereeanthony@kog.com')); // {об'єкт користувача Sheree Anthony}
+// console.log(getUserWithEmail(users, 'elmahead@omatom.com')); // {об'єкт користувача Elma Head}
+
+function getUserWithEmail(users, email) {
+  return users.find((user) => user.email === email);
+}
+
+// console.log(getUserWithEmail(users, "shereeanthony@kog.com"));
+// console.log(getUserWithEmail(users, "elmahead@omatom.com"));
+
+// Отримати масив всіх умінь всіх користувачів (поле skills), при цьому не повинно бути
+// Уміння, що повторюються, і вони повинні бути відсортовані в алфавітному порядку.
+// console.log(getSortedUniqueSkills(users));
+// ['adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit' , 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam']
+
+function getSortedUniqueSkills(users) {
+  // const allSkills = users.flatMap((user) => user.skills);
+
+  // const uniqueSkills = allSkills.filter(
+  //   (skill, index, array) => array.indexOf(skill) === index
+  // );
+
+  // const sortedSkills = uniqueSkills.toSorted();
+  // return sortedSkills;
+
+  return users
+    .flatMap((user) => user.skills)
+    .filter((skill, index, array) => array.indexOf(skill) === index)
+    .toSorted();
+}
+console.log(getSortedUniqueSkills(users));
