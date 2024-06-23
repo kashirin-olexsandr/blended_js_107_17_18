@@ -138,15 +138,13 @@ function getSortedUniqueSkills(users) {
 }
 // console.log(getSortedUniqueSkills(users));
 
-
 // Отримати загальну суму балансу (поле balance) всіх користувачів.
 // console.log(calculateTotalBalance(users)); // 20916
 
-function calculateTotalBalance(users){
-  return users.reduce((total, user) => total += user.balance, 0);
+function calculateTotalBalance(users) {
+  return users.reduce((total, user) => (total += user.balance), 0);
 }
 // console.log(calculateTotalBalance(users));
-
 
 // Напиши клас User для створення користувача з наступними властивостями:
 // a. userName - ім'я, рядок
@@ -157,17 +155,53 @@ function calculateTotalBalance(users){
 // `Користувачу ${} ${} років і у нього ${} публікацій.`
 
 class User {
-  constructor (param){
+  constructor(param) {
     this.name = param.userName;
     this.age = param.age;
     this.numbersOfPost = param.numbersOfPost;
   }
 
-  getInfo(){
-    return `Користувачу ${this.name} ${this.age} років і у нього ${this.numbersOfPost} публікацій.`
+  getInfo() {
+    return `Користувачу ${this.name} ${this.age} років і у нього ${this.numbersOfPost} публікацій.`;
   }
 }
 
-const user = new User({ userName: 'Іван', age: 25, numbersOfPost: 10 }); 
+const user = new User({ userName: "Іван", age: 25, numbersOfPost: 10 });
 console.log(user);
 console.log(user.getInfo());
+
+// 11. Напиши клас Client який створює об'єкт
+// з ​​властивостями login email
+// Оголоси приватні властивості #login #email,
+// доступ до яких зроби через геттер та сеттер login email
+
+class Client {
+  #login;
+  #email;
+
+  constructor(login, email) {
+    this.#login = login;
+    this.#email = email;
+  }
+
+  get login() {
+    return this.#login;
+  }
+
+  set login(newLogin) {
+    this.#login = newLogin;
+  }
+
+  get email() {
+    return this.#email;
+  }
+
+  set email(newEmail) {
+    this.#email = newEmail;
+  }
+}
+
+const client1 = new Client("alex", "alex@gmail.com");
+console.log(client1.email);
+client1.email = "padre@gmail.com";
+console.log(client1.email);
