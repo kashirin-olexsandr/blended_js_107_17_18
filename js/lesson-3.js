@@ -136,4 +136,38 @@ function getSortedUniqueSkills(users) {
     .filter((skill, index, array) => array.indexOf(skill) === index)
     .toSorted();
 }
-console.log(getSortedUniqueSkills(users));
+// console.log(getSortedUniqueSkills(users));
+
+
+// Отримати загальну суму балансу (поле balance) всіх користувачів.
+// console.log(calculateTotalBalance(users)); // 20916
+
+function calculateTotalBalance(users){
+  return users.reduce((total, user) => total += user.balance, 0);
+}
+// console.log(calculateTotalBalance(users));
+
+
+// Напиши клас User для створення користувача з наступними властивостями:
+// a. userName - ім'я, рядок
+// b. age - вік, число
+// c. numbersOfPost - кількість публікацій, число
+// d. клас очікує 1 параметр - об'єкт налаштувань з однойменними властивостями
+// Додай метод getInfo(), який повертає рядок:
+// `Користувачу ${} ${} років і у нього ${} публікацій.`
+
+class User {
+  constructor (param){
+    this.name = param.userName;
+    this.age = param.age;
+    this.numbersOfPost = param.numbersOfPost;
+  }
+
+  getInfo(){
+    return `Користувачу ${this.name} ${this.age} років і у нього ${this.numbersOfPost} публікацій.`
+  }
+}
+
+const user = new User({ userName: 'Іван', age: 25, numbersOfPost: 10 }); 
+console.log(user);
+console.log(user.getInfo());
