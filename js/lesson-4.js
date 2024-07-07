@@ -32,3 +32,35 @@ passwordButton.addEventListener("click", (event) => {
     passwordButton.textContent = "Приховати";
   }
 });
+
+/*
+
+Завдання 6
+
+Натиснувши кнопку "Подвоювати", збільшити значення
+
+у кожному елементі списку у 2 рази
+
+*/
+
+const listItems = document.querySelectorAll(".listItem")
+
+console.log(listItems);
+
+const btn = document.querySelector("#double");
+
+function doubleCallClick() {
+
+  listItems.forEach((item) => {
+
+    console.log(item.textContent);
+
+    const currentValue = parseInt(item.textContent);
+
+    item.textContent = currentValue * 2;
+
+}) 
+
+}
+
+btn.addEventListener ("click", doubleCallClick)
